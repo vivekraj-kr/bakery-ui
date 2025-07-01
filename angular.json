@@ -3,5 +3,61 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "bakery-ui": {
+      "projectType": "library",
+      "root": "projects/bakery-ui",
+      "sourceRoot": "projects/bakery-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bakery-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bakery-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/bakery-ui/tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/bakery-ui/.storybook",
+            "browserTarget": "bakery-ui:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/bakery-ui"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/bakery-ui/.storybook",
+            "browserTarget": "bakery-ui:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/bakery-ui"
+            ],
+            "outputDir": "storybook-static"
+          }
+        }
+      }
+    }
   }
 }
