@@ -1,0 +1,9 @@
+{
+  "name": "bakery-ui-storybook",
+  "version": 2,
+  "buildCommand": "ng run bakery-ui:build-storybook",
+  "outputDirectory": "storybook-static",
+  "installCommand": "npm install",
+  "framework": null,
+  "public": false
+} 
