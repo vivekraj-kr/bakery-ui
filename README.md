@@ -1,59 +1,154 @@
-# BakeryUi
+# 🥖 Bakery UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+[![npm version](https://badge.fury.io/js/bakery-ui.svg)](https://badge.fury.io/js/bakery-ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Angular](https://img.shields.io/badge/Angular-20.0.0-red.svg)](https://angular.io/)
 
-## Development server
+A delicious Angular UI component library with bakery-inspired theming and Storybook integration.
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
-```
+- 🎨 **Bakery-inspired theming** with warm, golden colors
+- 🧩 **Modular components** built with Angular 20
+- 📱 **Responsive design** that works on all devices
+- 🔧 **TypeScript support** with full type definitions
+- 📖 **Storybook integration** for component development
+- 🎯 **Tree-shakable** for optimal bundle size
+- ♿ **Accessible** components following WCAG guidelines
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Installation
 
 ```bash
-ng generate --help
+npm install bakery-ui
 ```
 
-## Building
+## 🚀 Quick Start
 
-To build the project run:
+### 1. Import the component in your Angular module or standalone component:
+
+```typescript
+import { Component } from '@angular/core';
+import { Button } from 'bakery-ui';
+
+@Component({
+  selector: 'app-example',
+  imports: [Button],
+  template: `
+    <lib-button 
+      label="Order Now" 
+      variant="primary" 
+      size="medium">
+    </lib-button>
+  `
+})
+export class ExampleComponent {}
+```
+
+### 2. Use in your template:
+
+```html
+<!-- Primary button -->
+<lib-button label="Order Now" variant="primary" size="medium"></lib-button>
+
+<!-- Secondary button -->
+<lib-button label="Learn More" variant="secondary" size="large"></lib-button>
+
+<!-- Danger button -->
+<lib-button label="Delete" variant="danger" size="small" [disabled]="false"></lib-button>
+```
+
+## 🧩 Available Components
+
+### Button Component
+
+A versatile button component with bakery-inspired styling.
+
+**Properties:**
+- `label: string` - Button text (default: 'Button')
+- `variant: 'primary' | 'secondary' | 'danger'` - Button style (default: 'primary')
+- `size: 'small' | 'medium' | 'large'` - Button size (default: 'medium')
+- `disabled: boolean` - Disabled state (default: false)
+
+**Example:**
+```html
+<lib-button 
+  label="Add to Cart" 
+  variant="primary" 
+  size="large"
+  [disabled]="isLoading">
+</lib-button>
+```
+
+## 🎨 Theming
+
+Bakery UI comes with a built-in bakery-inspired theme featuring:
+
+- **Primary**: Golden colors reminiscent of fresh bread
+- **Secondary**: Rich brown tones like chocolate
+- **Danger**: Warm red for important actions
+- **Hover effects**: Subtle animations and depth
+- **Typography**: Clean, readable fonts
+
+## 📖 Storybook
+
+View all components in our interactive Storybook:
 
 ```bash
-ng build
+# Clone the repository
+git clone https://github.com/vivekraj-kr/bakery-ui.git
+cd bakery-ui
+
+# Install dependencies
+npm install
+
+# Run Storybook
+ng run bakery-ui:storybook
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🔧 Development
 
-## Running unit tests
+### Building the Library
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+```bash
+ng build bakery-ui
+```
+
+### Running Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+### Contributing
 
-For end-to-end (e2e) testing, run:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-```bash
-ng e2e
-```
+## 📋 Requirements
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Angular 20.0.0 or higher
+- Node.js 18.0.0 or higher
+- npm 8.0.0 or higher
 
-## Additional Resources
+## 📄 License
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+- 🐛 [Report bugs](https://github.com/vivekraj-kr/bakery-ui/issues)
+- 💡 [Request features](https://github.com/vivekraj-kr/bakery-ui/issues)
+- 📧 [Contact us](mailto:vivekrajkr.mail@gmail.com)
+
+## 🏆 Acknowledgments
+
+- Built with [Angular CLI](https://angular.io/cli)
+- Powered by [Storybook](https://storybook.js.org/)
+- Inspired by the warmth and comfort of bakeries everywhere
+
+---
+
+Made with ❤️ and a lot of ☕ by [Vivek Raj](https://github.com/vivekraj-kr)

@@ -5,55 +5,46 @@
   "projects": {
     "bakery-ui": {
       "projectType": "library",
-      "root": "projects/bakery-ui",
-      "sourceRoot": "projects/bakery-ui/src",
+      "root": "",
+      "sourceRoot": "src",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular/build:ng-packagr",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "ng-package.json"
+          },
           "configurations": {
             "production": {
-              "tsConfig": "projects/bakery-ui/tsconfig.lib.prod.json"
+              "tsConfig": "tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/bakery-ui/tsconfig.lib.json"
+              "tsConfig": "tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/bakery-ui/tsconfig.spec.json"
+            "tsConfig": "tsconfig.spec.json"
           }
         },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "projects/bakery-ui/.storybook",
+            "configDir": ".storybook",
             "browserTarget": "bakery-ui:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/bakery-ui"
-            ],
-            "port": 6006
+            "port": 6006,
+            "compodoc": false,
+            "styles": ["src/styles.css"]
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "projects/bakery-ui/.storybook",
+            "configDir": ".storybook",
             "browserTarget": "bakery-ui:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/bakery-ui"
-            ],
             "outputDir": "storybook-static"
           }
         }
