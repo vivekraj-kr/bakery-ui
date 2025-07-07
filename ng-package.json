@@ -3,5 +3,9 @@
   "dest": "./dist/bakery-ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "reflect-metadata",
+    "tslib"
+  ]
 }
