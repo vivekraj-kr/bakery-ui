@@ -109,9 +109,9 @@ export class CupcakeCard {
     ];
 
     const sizeClasses = {
-      sm: 'max-w-sm',
-      md: 'max-w-md',
-      lg: 'max-w-lg'
+      sm: 'max-w-xs',
+      md: 'max-w-sm',
+      lg: 'max-w-md'
     };
 
     const variantClasses = {
@@ -167,9 +167,9 @@ export class CupcakeCard {
 
   get headerClasses(): string {
     const sizeClasses = {
-      sm: 'p-4 pb-2',
-      md: 'p-6 pb-3',
-      lg: 'p-8 pb-4'
+      sm: 'p-2 pb-1',
+      md: 'p-3 pb-2',
+      lg: 'p-4 pb-2'
     };
 
     return [
@@ -180,14 +180,14 @@ export class CupcakeCard {
 
   get contentClasses(): string {
     const sizeClasses = {
-      sm: 'p-4',
-      md: 'p-6',
-      lg: 'p-8'
+      sm: 'p-2',
+      md: 'p-3',
+      lg: 'p-4'
     };
 
     const spacingClasses = [];
-    if (this.hasHeader && !this.image) spacingClasses.push('pt-3');
-    if (this.hasFooter) spacingClasses.push('pb-3');
+    if (this.hasHeader && !this.image) spacingClasses.push('pt-2');
+    if (this.hasFooter) spacingClasses.push('pb-2');
     if (this.image && !this.hasHeader) spacingClasses.push('pt-0');
 
     return [
@@ -198,20 +198,20 @@ export class CupcakeCard {
 
   get footerClasses(): string {
     const sizeClasses = {
-      sm: 'p-4 pt-2',
-      md: 'p-6 pt-3',
-      lg: 'p-8 pt-4'
+      sm: 'p-2 pt-1',
+      md: 'p-3 pt-2', 
+      lg: 'p-4 pt-2'
     };
 
     return [
-      'border-t border-amber-100 bg-amber-25',
+      'border-t border-amber-100',
       sizeClasses[this.size]
     ].join(' ');
   }
 
   get imageClasses(): string {
     return [
-      'w-full h-48 object-cover',
+      'w-full h-32 object-cover',
       'transition-transform duration-200',
       this.clickable ? 'hover:scale-105' : ''
     ].join(' ');

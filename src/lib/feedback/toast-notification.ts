@@ -62,12 +62,12 @@ export type ToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-
       </div>
 
       <!-- Content -->
-      <div class="ml-3 flex-1">
+      <div class="ml-2 flex-1">
         <h4 *ngIf="title" [class]="titleClasses">{{ title }}</h4>
         <p [class]="messageClasses">{{ message }}</p>
         
         <!-- Action Button -->
-        <div *ngIf="actionText" class="mt-3">
+        <div *ngIf="actionText" class="mt-1">
           <button 
             type="button"
             [class]="actionButtonClasses"
@@ -78,13 +78,13 @@ export type ToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-
       </div>
 
       <!-- Close Button -->
-      <div *ngIf="closable" class="ml-4 flex-shrink-0 flex">
+      <div *ngIf="closable" class="ml-2 flex-shrink-0 flex">
         <button 
           type="button"
           [class]="closeButtonClasses"
           (click)="onClose()"
           [attr.aria-label]="'Close notification'">
-          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" 
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" 
                   clip-rule="evenodd" />
@@ -149,27 +149,27 @@ export class ToastNotification implements OnInit, OnDestroy {
 
   get toastClasses(): string {
     const baseClasses = [
-      'max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto',
+      'max-w-xs w-full bg-white shadow-md rounded-md pointer-events-auto',
       'ring-1 ring-black ring-opacity-5 overflow-hidden',
       'transition-all duration-300 ease-in-out'
     ];
 
     const typeClasses = {
-      success: 'border-l-4 border-green-400',
-      error: 'border-l-4 border-red-400',
-      warning: 'border-l-4 border-yellow-400',
-      info: 'border-l-4 border-blue-400'
+      success: 'border-l-2 border-green-400',
+      error: 'border-l-2 border-red-400',
+      warning: 'border-l-2 border-yellow-400',
+      info: 'border-l-2 border-blue-400'
     };
 
     return [
       ...baseClasses,
       typeClasses[this.type],
-      'p-4'
+      'p-2'
     ].join(' ');
   }
 
   get iconClasses(): string {
-    const baseClasses = 'h-6 w-6';
+    const baseClasses = 'h-4 w-4';
     
     const typeClasses = {
       success: 'text-green-400',
@@ -182,11 +182,11 @@ export class ToastNotification implements OnInit, OnDestroy {
   }
 
   get titleClasses(): string {
-    return 'text-sm font-medium text-gray-900';
+    return 'text-xs font-medium text-gray-900';
   }
 
   get messageClasses(): string {
-    return this.title ? 'mt-1 text-sm text-gray-500' : 'text-sm text-gray-900';
+    return this.title ? 'mt-0.5 text-xs text-gray-500' : 'text-xs text-gray-900';
   }
 
   get actionButtonClasses(): string {

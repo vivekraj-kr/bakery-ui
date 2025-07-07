@@ -180,7 +180,7 @@ export class BagelInput implements ControlValueAccessor {
 
   get labelClasses(): string {
     return [
-      'block text-sm font-medium mb-2',
+      'block text-xs font-medium mb-1',
       this.error ? 'text-red-700' : 'text-amber-800'
     ].join(' ');
   }
@@ -198,9 +198,9 @@ export class BagelInput implements ControlValueAccessor {
     ];
 
     const sizeClasses = {
-      sm: 'px-3 py-1.5 text-sm',
-      md: 'px-4 py-2 text-base',
-      lg: 'px-5 py-3 text-lg'
+      sm: 'px-2 py-1 text-xs',
+      md: 'px-3 py-1.5 text-sm',
+      lg: 'px-4 py-2 text-base'
     };
 
     const stateClasses = this.error 
@@ -229,11 +229,11 @@ export class BagelInput implements ControlValueAccessor {
   }
 
   get helperClasses(): string {
-    return 'mt-1 text-sm text-amber-600';
+    return 'mt-0.5 text-xs text-amber-600';
   }
 
   get errorClasses(): string {
-    return 'mt-1 text-sm text-red-600 flex items-center';
+    return 'mt-0.5 text-xs text-red-600 flex items-center';
   }
 
   get charCountClasses(): string {
