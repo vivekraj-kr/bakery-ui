@@ -45,7 +45,9 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "bakery-ui:build",
-            "outputDir": "storybook-static"
+            "outputDir": "storybook-static",
+            "compodoc": false,
+            "styles": ["src/styles.css"]
           }
         }
       }
